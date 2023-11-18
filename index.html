@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>flipkart</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="container">
+      <div id="itemWrapper">
+        <header id="header">
+          <h2 id="title">Filter by Title / Order ID</h2>
+          <input
+            class="searchBar"
+            type="search"
+            placeholder="Start typing to search"
+          />
+        </header>
+        <div class="itemList_wrapper">
+          <div id="list-container">
+            <div id="wrapper"></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="message_container">
+        <div class="msg_wrapper">
+          <header id="header">
+            <div class="msg_header"></div>
+          </header>
+          <section class="mess_container">
+            <div class="emptyChat">Send a message to start chatting</div>
+            <div class="sender-msg_cont"></div>
+          </section>
+          <footer>
+            <input
+              class="footer_input"
+              type="text"
+              placeholder="Type a Message..."
+              name="userMsg"
+              id="userMsg"
+            />
+          </footer>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
