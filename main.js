@@ -61,8 +61,12 @@ async function getMsgContent(selectedId) {
 // to render a list on screen
 const renderItemList = (data) => {
   let html = "";
-  data.forEach(({ title, imageURL, orderId, id }) => {
-    html += `<section class="list" id=list_${id}>
+  data.forEach(
+    ({ title, imageURL, orderId, id, latestMessageTimestamp, messageList }) => {
+      let lastMessage =
+        messageList.length > 0 ? messageList.at(-1).message : "";
+
+      html += `<section class="list" id=list_${id}>
       <div class="left_container" id=left_${id}>
         <img
           class="item_img"
@@ -73,14 +77,17 @@ const renderItemList = (data) => {
         <div class="description" id=des_${id}>
           <p class="title" id="title_${id}" >${title}</p>
           <div class="order_id" id="order_${id}">${orderId}</div>
-          <div class="message" id=msg_${id}>if you have minute</div>
+          <div class="message" id=msg_${id}>${lastMessage}</div>
         </div>
       </div>
       <div class="right_container" id=rigth_${id}>
-        <div class="date" id=date_${id}>15/09/2021</div>
+        <div class="date" id=date_${id}>${new Date(
+        latestMessageTimestamp
+      ).toLocaleDateString("en-GB")}</div>
       </div>
     </section>`;
-  });
+    }
+  );
 
   wrapperRef.innerHTML = html;
 };
